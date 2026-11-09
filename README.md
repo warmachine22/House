@@ -31,7 +31,7 @@ The current production deployment was uploaded to Vercel directly. The Vercel pr
 
 **Touchscreen (iPad/iPhone):** tap **PLAY ON DESKTOP**, drag the left control to move, drag on the right half of the screen to look, and use FIRE, LIGHT, RELOAD, and RUN on-screen buttons. Touch controls appear automatically on devices that report a coarse pointer.
 
-**VR:** left thumbstick moves, right thumbstick turns, left trigger toggles the flashlight (or replays after victory/defeat), right trigger fires, right grip/secondary button reloads. The pistol and its flashlight follow the right controller; shots follow its aim, and a gun display shows health, ammunition, and threats. (Controller mapping can vary by browser.)
+**VR:** left thumbstick moves relative to the direction you look (forward/backward/strafe), right thumbstick snap-turns around your headset, left trigger toggles the flashlight (or replays after victory/defeat), right trigger fires, right grip/secondary button reloads. The pistol and its flashlight follow the right controller; shots follow its aim, and a gun display shows health, ammunition, and threats. (Controller mapping can vary by browser.)
 
 Eliminate the finite enemy population. New House creates a new seed; Replay Seed repeats the current layout. Add `?seed=123456` to reproduce a run.
 
@@ -50,3 +50,5 @@ Original code and procedural geometric content. No third-party game art or audio
 ## VR repair pass
 
 Fixed controller parenting and handedness mapping, gun-direction shooting, weapon-mounted VR light, duplicate walls sealing rooms, floor selection, and safe starting room. Reduced dynamic room lights and added a gun display and left-trigger replay. Browser checks cover player movement, starting doorway clearance, enemy damage, and controller rig parenting; physical Quest tracking and comfort remain unverified.
+
+Movement uses the current XR viewer pose and applies player yaw once. Thumbstick drift is filtered with an 18% dead zone; diagonal movement has the same top speed as forward movement. Looking straight up/down retains the last horizontal heading. Automated tests cover all cardinal movement directions, snap yaw, drift, and diagonal speed. Physical Quest comfort remains unverified.
