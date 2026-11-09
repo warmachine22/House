@@ -13,6 +13,16 @@ npm test
 
 Open the Vite URL in a modern desktop browser. For Quest Browser, serve the deployed HTTPS URL and press **ENTER VR** from the page. The headset must allow immersive VR and motion controls.
 
+## Production hosting
+
+- **Host:** Vercel
+- **Vercel project:** `blackout-house-xr`
+- **Production URL:** [https://housx.vercel.app](https://housx.vercel.app)
+- **Other working aliases:** [https://blackout-house.vercel.app](https://blackout-house.vercel.app) and [https://blackout-house-xr.vercel.app](https://blackout-house-xr.vercel.app)
+- **Build:** `npm run build`; Vercel serves the `dist` directory over HTTPS.
+
+The current production deployment was uploaded to Vercel directly. The Vercel project is not connected to this GitHub repository for automatic deployments, so pushing to `main` does not publish a new production build by itself.
+
 ## Controls
 
 **Desktop:** WASD to move, mouse to look, click or Space to fire, F toggles the flashlight, R reloads, Shift runs, Escape returns to the menu.
