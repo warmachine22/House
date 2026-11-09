@@ -1,5 +1,7 @@
 import {it,expect} from 'vitest';
-import {newRun,batteryTick,upgrade,pressure,shotDamage} from './survival';
+import {newRun,batteryTick,upgrade,pressure,shotDamage,contactDamage} from './survival';
 it('drains to zero, turns off and recharges only while off',()=>{const r=newRun();expect(batteryTick(r,true,30)).toBe(false);expect(r.battery).toBe(0);batteryTick(r,false,10);expect(r.battery).toBe(50);batteryTick(r,false,100);expect(r.battery).toBe(r.capacity)});
 it('upgrades change combat and battery stats and reset for a fresh run',()=>{const r=newRun();upgrade(r,'SPREAD');upgrade(r,'PIERCE');upgrade(r,'DAMAGE');upgrade(r,'BATTERY');upgrade(r,'RECHARGE');upgrade(r,'RAPID');expect(r.pellets).toBe(3);expect(r.pierce).toBe(1);expect(shotDamage(r,true)).toBeGreaterThan(shotDamage(r,false)*2);expect(r.capacity).toBe(135);expect(r.recharge).toBe(7);expect(r.interval).toBeLessThan(.3);expect(newRun().pellets).toBe(1)});
 it('ramps pressure toward the 10–15 minute target without unlimited actors',()=>{const a=pressure(0),b=pressure(600),c=pressure(900);expect(b.interval).toBeLessThan(a.interval);expect(c.interval).toBeLessThan(b.interval);expect(c.hp).toBeGreaterThan(b.hp);expect(c.speed).toBeGreaterThan(b.speed);expect(pressure(100000).cap).toBeLessThanOrEqual(75)});
+
+it('makes contact dangerous and lets armor and reload upgrades improve survival',()=>{const r=newRun();expect(contactDamage(r,pressure(0).damage)).toBe(32);expect(r.reloadSeconds).toBe(5);for(let i=0;i<20;i++){upgrade(r,'ARMOR');upgrade(r,'RELOAD')}expect(r.reloadSeconds).toBe(1.2);expect(r.armor).toBe(.65);expect(contactDamage(r,32)).toBeCloseTo(11.2);expect(newRun().armor).toBe(0)});

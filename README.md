@@ -27,11 +27,11 @@ The current production deployment was uploaded to Vercel directly. The Vercel pr
 
 ## Controls
 
-**Desktop:** WASD to move, mouse to look, click or Space to fire, F toggles the flashlight, R reloads, Shift runs, Escape returns to the menu.
+**Desktop:** WASD to move, mouse to look, click or Space to fire, F toggles the flashlight, H toggles status (reloads happen automatically), Shift runs, Escape returns to the menu.
 
-**Touchscreen (iPad/iPhone):** tap **PLAY ON DESKTOP**, drag the left control to move, drag on the right half of the screen to look, and use FIRE, LIGHT, RELOAD, and RUN on-screen buttons. Touch controls appear automatically on devices that report a coarse pointer.
+**Touchscreen (iPad/iPhone):** tap **PLAY ON DESKTOP**, drag the left control to move, drag on the right half of the screen to look, and use FIRE, LIGHT, STATUS, and RUN on-screen buttons. Touch controls appear automatically on devices that report a coarse pointer.
 
-**VR:** left thumbstick moves relative to the direction you look (forward/backward/strafe), right thumbstick snap-turns around your headset, left trigger toggles the flashlight (or replays after victory/defeat), right trigger fires, right grip/secondary button reloads. The pistol and its flashlight follow the right controller; shots follow its aim, and a gun display shows health, ammunition, and threats. (Controller mapping can vary by browser.)
+**VR:** left thumbstick moves relative to the direction you look (forward/backward/strafe), right thumbstick snap-turns around your headset, left trigger toggles the flashlight (or replays after victory/defeat), right trigger fires, right grip/secondary button toggles the status display. The pistol and its flashlight follow the right controller; shots follow its aim, and a gun display shows health, ammunition, and threats. (Controller mapping can vary by browser.)
 
 Survive escalating zombie hordes for as long as possible. Walk over glowing pickups to collect upgrades. New House creates a new seed; Replay Seed repeats the current layout. Add `?seed=123456` to reproduce a run.
 
@@ -63,10 +63,18 @@ The flashlight initially lasts 25 seconds and fully recharges in 20 seconds whil
 
 Weapons start with 15 rounds, unlimited reserve ammo, 3 damage per body hit and 2.5× headshot damage against zombies starting at 9 health. Hold the trigger/FIRE button to repeat fire; reload with the existing control. Tracers, muzzle flashes, synthesized gun noise, localized hits/growls and right-controller haptics provide feedback without camera shake.
 
-Walk over labeled glowing pickups: DAMAGE (+1.5), SPREAD (+2 pellets up to 7), PIERCE (+1 zombie up to 5), BATTERY (+35 capacity/refill), RECHARGE (+2 per second), RAPID (18% faster, capped), HEALTH (+35 up to 100). Twenty initial pickups encourage exploration; more appear over time and every third kill drops one. Kills also earn automatic cycling upgrades at increasing level thresholds. Upgrades are reset every run; permanent meta progression and upgrade-choice menus are not implemented.
+Walk over labeled glowing pickups: DAMAGE (+1.5), SPREAD (+2 pellets up to 7), PIERCE (+1 zombie up to 5), BATTERY (+35 capacity/refill), RECHARGE (+2 per second), RELOAD (22% faster, minimum 1.2 seconds), ARMOR (+12% reduction, maximum 65%), RAPID (18% faster, capped), HEALTH (+35 up to 100). Eight initial pickups encourage exploration; more appear over time and every eighth kill drops one. Kills also earn automatic cycling upgrades at increasing level thresholds. Upgrades are reset every run; permanent meta progression and upgrade-choice menus are not implemented.
 
 Reference research: [Nightmare Reaper](https://store.steampowered.com/app/1051690/Nightmare_Reaper/) for retro FPS loot progression; [Yet Another Zombie Survivors](https://store.steampowered.com/app/2163330/Yet_Another_Zombie_Survivors/) for horde survival. All game content here remains original.
 
 ## Reproducible playtesting
 
 See [the playtest report](docs/PLAYTEST.md) for defects found, measured idle/active/15-minute simulation results, the top-down map, and commands for running browser playtests. These checks exercise the game's actual systems; fun, headset audio, comfort, and real Quest performance still need hardware playtesting.
+
+## Movement and scarcity rebalance
+
+Zombies take clear diagonal routes through open passages and ease their acceleration and facing changes. Walls still block movement and attacks. There are 8 initial pickups, none within 4 graph steps of spawn; timed loot appears every 70 seconds, with kill drops every 8 kills. Level-based upgrades still apply.
+
+Reloading is automatic after the 15th round, initially 5 seconds. RELOAD pickups reduce the delay toward a minimum of 1.2 seconds. Status is hidden by default; toggle it with right grip in VR, H on desktop, or STATUS on touch. Armor is included in initial loot and the random drop pool.
+
+Zombie contact initially deals 32 damage, with a short invulnerability window. Armor reduces incoming damage up to 65%. Bosses enter approximately every 3 minutes when a spawn slot is available, with purple bodies, large shoulder silhouettes, 1.45× height and 8× base health. Brutes remain brown and smaller. Zombie eyes are only self-lit inside 1.8 meters; farther away their eye meshes require actual scene illumination.

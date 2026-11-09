@@ -1,5 +1,7 @@
 # Automated playtest and repair report
 
+The numerical runs below predate the scarcity/contact-damage rebalance. Current changes: 8 starting pickups at least 4 maze steps away, slower automatic reloads, armor, heavier melee damage, smooth path shortcuts, and scheduled purple bosses. Earlier survival outcomes are historical and do not establish current human balance.
+
 These tests fast-forward the actual browser game's movement, collision, raycast shooting, enemy AI, pickups, battery and spawn logic. They do not use a separate approximation of combat. The active bot uses perfect aim and no reaction delay. Results are engineering checks, not a human fun rating or a measured average Quest survival time. Actor spawning uses runtime randomness, so results vary on replay even with a fixed layout seed.
 
 ## Problems reproduced and repaired
@@ -34,3 +36,5 @@ LONG_RUN=1 npm run test:bot
 The browser scripts start their own Vite server on port 4180. `CHROME_PATH` can select a local Chromium binary. `?debug=1` exposes inspection/fast-forward helpers only when requested.
 
 ![Top-down map: green player, blue loot, red zombies](top-down-seed42.svg)
+
+Latest checks: 14 unit/property tests passed. Browser regression verified status starts hidden and toggles, an empty magazine remains empty at 4 seconds and reloads after 5, and a stage-3 boss has 120 health, purple material and 1.45× height. Physical Quest movement feel and updated difficulty still need hardware testing.
