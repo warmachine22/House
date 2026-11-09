@@ -31,7 +31,7 @@ The current production deployment was uploaded to Vercel directly. The Vercel pr
 
 **Touchscreen (iPad/iPhone):** tap **PLAY ON DESKTOP**, drag the left control to move, drag on the right half of the screen to look, and use FIRE, LIGHT, RELOAD, and RUN on-screen buttons. Touch controls appear automatically on devices that report a coarse pointer.
 
-**VR:** left thumbstick moves, right thumbstick turns, left trigger replays after victory/defeat; left grip/secondary button toggles the flashlight, right trigger fires, right grip/secondary button reloads. The pistol and its flashlight follow the right controller; shots follow its aim, and a gun display shows health, ammunition, and threats. (Controller mapping can vary by browser.)
+**VR:** left thumbstick moves, right thumbstick turns, left trigger toggles the flashlight (or replays after victory/defeat), right trigger fires, right grip/secondary button reloads. The pistol and its flashlight follow the right controller; shots follow its aim, and a gun display shows health, ammunition, and threats. (Controller mapping can vary by browser.)
 
 Eliminate the finite enemy population. New House creates a new seed; Replay Seed repeats the current layout. Add `?seed=123456` to reproduce a run.
 
@@ -51,7 +51,7 @@ This is a compact playable implementation. Enemy navigation is direct steering w
 
 1. Open the production HTTPS URL in Meta Quest Browser.
 2. Allow the page to enter immersive VR and verify both controllers are tracked.
-3. Check that the left stick walks, right stick turns, left trigger replays after victory/defeat; left grip/secondary button toggles the flashlight, and right trigger fires.
+3. Check that the left stick walks, right stick turns, left trigger toggles the flashlight (or replays after victory/defeat), and right trigger fires.
 4. Walk through a room door and traverse each staircase in both directions.
 5. Confirm that walls and furniture block player movement and gunfire.
 6. Confirm enemies appear on all floors, react to illumination/shots, and can reach the player across stair routes.
