@@ -66,3 +66,7 @@ Weapons start with 15 rounds, unlimited reserve ammo, 3 damage per body hit and 
 Walk over labeled glowing pickups: DAMAGE (+1.5), SPREAD (+2 pellets up to 7), PIERCE (+1 zombie up to 5), BATTERY (+35 capacity/refill), RECHARGE (+2 per second), RAPID (18% faster, capped), HEALTH (+35 up to 100). Twenty initial pickups encourage exploration; more appear over time and every third kill drops one. Kills also earn automatic cycling upgrades at increasing level thresholds. Upgrades are reset every run; permanent meta progression and upgrade-choice menus are not implemented.
 
 Reference research: [Nightmare Reaper](https://store.steampowered.com/app/1051690/Nightmare_Reaper/) for retro FPS loot progression; [Yet Another Zombie Survivors](https://store.steampowered.com/app/2163330/Yet_Another_Zombie_Survivors/) for horde survival. All game content here remains original.
+
+## Reproducible playtesting
+
+See [the playtest report](docs/PLAYTEST.md) for defects found, measured idle/active/15-minute simulation results, the top-down map, and commands for running browser playtests. These checks exercise the game's actual systems; fun, headset audio, comfort, and real Quest performance still need hardware playtesting.
