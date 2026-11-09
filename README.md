@@ -17,6 +17,8 @@ Open the Vite URL in a modern desktop browser. For Quest Browser, serve the depl
 
 **Desktop:** WASD to move, mouse to look, click or Space to fire, F toggles the flashlight, R reloads, Shift runs, Escape returns to the menu.
 
+**Touchscreen (iPad/iPhone):** tap **PLAY ON DESKTOP**, drag the left control to move, drag on the right half of the screen to look, and use FIRE, LIGHT, RELOAD, and RUN on-screen buttons. Touch controls appear automatically on devices that report a coarse pointer.
+
 **VR:** left thumbstick moves, right thumbstick turns, left trigger toggles the flashlight, right trigger fires, right grip/secondary button reloads. The flashlight and pistol are attached to the corresponding controller. (Controller mapping can vary by browser.)
 
 Eliminate the finite enemy population. New House creates a new seed; Replay Seed repeats the current layout. Add `?seed=123456` to reproduce a run.
