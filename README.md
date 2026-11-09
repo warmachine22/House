@@ -2,6 +2,8 @@
 
 A client-side procedural survival horror shooter built with TypeScript, Vite, and Three.js. Runs in desktop browsers and requests immersive WebXR sessions where supported. No runtime services, accounts, or external game assets are required.
 
+The initial project brief and acceptance goals are archived in [ORIGINAL_GOAL.md](./ORIGINAL_GOAL.md).
+
 ## Run locally
 
 ```sh
